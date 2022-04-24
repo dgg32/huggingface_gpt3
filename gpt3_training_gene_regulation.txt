@@ -1,0 +1,27 @@
+#Upregulation of the clpB gene in response to heat shock and beta-lactam antibiotics in Acinetobacter baumannii 
+heat shock,upregulate,cplB
+beta-lactam antibiotics,upregulate,cplB
+
+#Age-related upregulation of Drosophila caudal gene via NF-kappaB in the adult posterior midgut 
+NF-kappaB,upregulate,caudal
+
+#STAT1 interacts with RXRα to upregulate ApoCII gene expression in macrophages 
+STAT1,upregulate,ApoCII
+
+#EGF up-regulates miR-31 through the C/EBPβ signal cascade in oral carcinoma 
+EGF,upregulate,miR-31
+
+#IRF1 up-regulates isg15 gene expression in dsRNA stimulation or CSFV infection by targeting nucleotides -487 to -325 in the 5' flanking region
+IRF1,upregulate,isg15
+
+#PARP1 gene expression is downregulated by knockdown of PARG gene. 
+knockdown of PARG,downregulate,PARP1
+
+#Downregulation of FOXO3a by DNMT1 promotes breast cancer stem cell properties and tumorigenesis
+DNMT1,downregulate,FOXO3a
+
+#CYP1A2 Downregulation by Obeticholic Acid: Usefulness as a Positive Control for the In Vitro Evaluation of Drug-Drug Interactions
+Obeticholic Acid,downregulate,CYP1A2
+
+#High glucose-induced circHIPK3 downregulation mediates endothelial cell injury 
+High glucose,downregulate,circHIPK3
