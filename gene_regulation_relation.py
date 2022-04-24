@@ -15,8 +15,14 @@ verbs = ["up", "promot", "down", "suppress" "overexpress"]
 
 if __name__ == "__main__":
     input_file = sys.argv[1]
+    verb_file = sys.argv[2]
+
+    
 
     sentences = open(input_file).read()
+    verbs = open(verb_file).read().split("\n")
+
+    
 
     doc = nlp(sentences)
     assert doc.has_annotation("SENT_START")
