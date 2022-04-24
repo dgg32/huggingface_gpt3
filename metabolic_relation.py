@@ -11,17 +11,19 @@ model_infer = pipeline('ner',model=model,tokenizer=tokenizer)
 
 nlp = spacy.load("en_core_web_sm")
 
-input_file = "example_metabolic.txt"
+if __name__ == "__main__":
 
-sentences = open(input_file).read()
+    input_file = sys.argv[1]
 
-doc = nlp(sentences)
-assert doc.has_annotation("SENT_START")
-for sent in doc.sents:
-    #print(sent.text)
-    entities = model_infer(sent.text)
-    if len(entities) > 0:
-        print (sent.text)
-        res = gpt3.extract_relation("gpt3_training_metabolic.txt", sent.text.strip() + "\n")
-        
-        print(res)
+    sentences = open(input_file).read()
+
+    doc = nlp(sentences)
+    assert doc.has_annotation("SENT_START")
+    for sent in doc.sents:
+        #print(sent.text)
+        entities = model_infer(sent.text)
+        if len(entities) > 0:
+            print (sent.text)
+            res = gpt3.extract_relation("gpt3_training_metabolic.txt", sent.text.strip() + "\n")
+            
+            print(res)
