@@ -1,0 +1,1 @@
+In chicken, adiposity is influenced by hepatic stearoyl-CoA desaturase (SCD) 1. This gene is up-regulated by low-fat high-carbohydrate diet and down-regulated by addition of polyunsaturated fatty acids (PUFA).

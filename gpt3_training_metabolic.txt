@@ -6,3 +6,6 @@
 
 #Able to degrade d-arabitol, d-aspartic acid, cellobiose, dextrin, d-fructose.
 {"d-arabitol degradation": "positive", "d-aspartic acid degradation": "positive", "cellobiose degradation": "positive", "dextrin degradation": "positive", "d-fructose degradation": "positive"}
+
+#The strain grew at temperatures between 6 and 37 °C (optimum, 28 °C), in 0–10 % NaCl (optimum, 1 %) and at pH 6.0–9.5 (optimum, pH 7.5–8.5).
+{"optimum growth temperature": "28 °C", "optimum growth NaCl concentration": "1% ", "optimum growth pH": "7.5–8.5"}
