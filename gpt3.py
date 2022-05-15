@@ -3,21 +3,22 @@ import sys
 import openai
 
 
-
-
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+#print ("in Gpt3")
 
 def extract_relation (training_file, text):
-    training = "\n".join(open(training_file, 'r').readlines()) + "\n"
-    my_prompt = training + text
 
+    training = "\n".join([x.strip() for x in open(training_file, 'r').readlines()]) + "\n\n"
+    my_prompt = training + text
+    
+    #print (my_prompt)
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=my_prompt,
         temperature=0.7,
-        max_tokens=256,
-        top_p=1,
+        max_tokens=100,
+        top_p=0.5,
         frequency_penalty=0,
         presence_penalty=0
     )
@@ -34,6 +35,6 @@ if __name__ == "__main__":
     with open(input_file, 'r') as file_in:
         for line in file_in:
             if len(line.strip()) > 0:
-                res = extract_relation(line.strip() + "\n")
+                res = extract_relation(training, line.strip() + "\n")
 
                 print(res)

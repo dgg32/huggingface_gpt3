@@ -1,0 +1,6 @@
+gh
+pl
+ce
+glycoside hydrolase
+polysaccharide lyase
+carbohydrate esterase
