@@ -14,11 +14,11 @@ def extract_relation (training_file, text):
     
     #print (my_prompt)
     response = openai.Completion.create(
-        engine="text-davinci-002",
+        engine="text-curie-001",
         prompt=my_prompt,
-        temperature=0.7,
-        max_tokens=100,
-        top_p=0.5,
+        temperature=0,
+        max_tokens=70,
+        top_p=0,
         frequency_penalty=0,
         presence_penalty=0
     )

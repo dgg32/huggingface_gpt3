@@ -16,7 +16,7 @@ def esearch(db, term):
 
     content = json.loads(requests.get(url).content.decode('iso8859-1'))
 
-    
+    #print (url)
     return content["esearchresult"]["idlist"]
 
 def efecth(db, id):
@@ -31,22 +31,29 @@ def efecth(db, id):
             return content
 
 def name_disambiguation(name):
+    to_replace = {"&beta;":"beta", "&alpha;": "alpha", "&gamma;": "gamma", "&delta;": "delta", "&epsilon;": "epsilon", "&zeta;": "zeta", "&eta;": "eta", "&theta;": "theta", "&iota;": "iota", "&kappa;": "kappa", "&lambda;": "lambda", "&mu;": "mu"}
+
+    for t in to_replace:
+        if t in name:
+            name = name.replace(t, to_replace[t])
+
     if name.lower() in cache:
         return cache[name.lower()]
     
     else:
         ids = esearch("mesh", name)
         #print (ids)
+        content = ""
         if len(ids) == 0:
-            return None
+            pass
         else:
             content = efecth("mesh", ids[0])
             cache[name.lower()] = content
-            with open(local_cache_file, "a", newline='') as csvfile:
-                writer = csv.writer(csvfile, delimiter='\t')
-                writer.writerow([name.lower(), content])
-            return content
+        with open(local_cache_file, "a", newline='', encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile, delimiter='\t')
+            writer.writerow([name.lower(), content])
+        return content
 
 
 if __name__ == "__main__":
-    print(name_disambiguation("xyloglucan"))
+    print(name_disambiguation("amorphous cellulose"))

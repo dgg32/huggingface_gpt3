@@ -1,26 +1,27 @@
 #Formosa sp. nov strain Hel1_33_131 GH30 (FbGH30) removed the β-1,6-glucose side chains, and Formosa agariphila GH17A (FaGH17A) and FaGH16A hydrolyzed the β-1,3-glucose backbone of laminarin.
-GH30,degrades,laminarin
-GH16,degrades,laminarin
-GH17,degrades,laminarin
+GH30|DEGRADES|laminarin
+GH16|DEGRADES|laminarin
+GH17|DEGRADES|laminarin
 
 
 #These observations suggest that GH173 could act on β-linked galactosyl residues in pectic polysaccharides.
-GH173,degrades,pectin
+GH173|DEGRADES|pectin
 
 #In Bacteroidales bacterium UBA2817, a GH173 member is appended to a GH78 module carrying a CBM67, both targeting rhamnogalacturonans (Fig. 6b).
-GH173,degrades,rhamnogalacturonans
-GH78,degrades,rhamnogalacturonans
-
-#The GH97 member (CapGH97) is a calcium-activated α-galactosidase, whereas the GH43 member (CapGH43_12) is a highly active α-L-arabinofuranosidase—two key activities to remove glycosidic substitutions of heteroxylans.
-GH97,degrades,
+GH173|DEGRADES|rhamnogalacturonans
+GH78|DEGRADES|rhamnogalacturonans
 
 #Interestingly, we also identified in the PUL a new ulvan lyase (LOR_29) which showed no homology to previously reported ulvan lyases making it a founding member of yet another new family of polysaccharide lyases (PL25).
-PL25,degrades,ulvan
+PL25|DEGRADES|ulvan
 
 #heparin/heparan sulfate are degraded by bacterial PLs belonging to families PL12, -13, and -21.
-PL12,degrades,heparin
-PL12,degrades,heparan
-PL13,degrades,heparin
-PL13,degrades,heparan
-PL21,degrades,heparin
-PL21,degrades,heparan
+PL12|DEGRADES|heparin
+PL12|DEGRADES|heparan
+PL13|DEGRADES|heparin
+PL13|DEGRADES|heparan
+PL21|DEGRADES|heparin
+PL21|DEGRADES|heparan
+
+#The CAZy families required to degrade galactan are β-galactosidase (GH35) and β-endogalactanase (GH53).
+GH35|DEGRADES|galactan
+GH53|DEGRADES|galactan
