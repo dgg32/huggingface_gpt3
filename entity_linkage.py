@@ -3,7 +3,7 @@ import json
 import csv
 import re
 
-local_cache_file = "./cache.csv"
+local_cache_file = "./cache.tsv"
 cache = {}
 with open(local_cache_file, newline='') as csvfile:
     name_mapping = csv.reader(csvfile, delimiter='\t')
@@ -36,6 +36,7 @@ def name_disambiguation(name):
     
     else:
         ids = esearch("mesh", name)
+        #print (ids)
         if len(ids) == 0:
             return None
         else:
@@ -48,4 +49,4 @@ def name_disambiguation(name):
 
 
 if __name__ == "__main__":
-    print(name_disambiguation("sulfated fucans"))
+    print(name_disambiguation("xyloglucan"))
