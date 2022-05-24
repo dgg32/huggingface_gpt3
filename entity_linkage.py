@@ -17,7 +17,10 @@ def esearch(db, term):
     content = json.loads(requests.get(url).content.decode('iso8859-1'))
 
     #print (url)
-    return content["esearchresult"]["idlist"]
+    if "idlist" in content["esearchresult"]:
+        return content["esearchresult"]["idlist"]
+    else:
+        return []
 
 def efecth(db, id):
     url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db={db}&id={id}"
@@ -48,11 +51,11 @@ def name_disambiguation(name):
             pass
         else:
             content = efecth("mesh", ids[0])
-            cache[name.lower()] = content
-        with open(local_cache_file, "a", newline='', encoding='utf-8') as csvfile:
+            cache[name.lower()] = content.lower()
+        with open(local_cache_file, "a", newline='') as csvfile:
             writer = csv.writer(csvfile, delimiter='\t')
-            writer.writerow([name.lower(), content])
-        return content
+            writer.writerow([name.lower(), content.lower()])
+        return content.lower()
 
 
 if __name__ == "__main__":
